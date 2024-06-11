@@ -1,12 +1,10 @@
+<template>
+  <Navbar />
+  <Home /> 
+</template>
 <script setup>
-import Menubar from 'primevue/menubar';
+import Navbar from './components/Navbar.vue';
+import Home from './views/Home.vue';
 </script>
 
-
-<template>
-  <Menubar model="items" />
-</template>
-
-<style scoped>
-
-</style>
+<style scoped></style>
