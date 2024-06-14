@@ -1,6 +1,5 @@
 <template>
   <Navbar />
-  <Home /> 
 </template>
 <script setup>
 import Navbar from './components/Navbar.vue';
