@@ -1,17 +1,14 @@
 <template>
   <div>
-    <TabMenu :model="items" />
-    <div v-if="activeItem === 'Home'">Home</div>
-    <div v-if="activeItem === 'Todo'" class="content">Todo</div>
-    <div v-if="activeItem === 'Finance'" class="content">Finance</div>
-    <div v-if="activeItem === 'Calendar'" class="content">Calendar</div>
-    <div v-if="activeItem === 'Settings'" class="content">Settings</div>
+    <TabMenu :model="items"/>
+    <router-view />
   </div>
 </template>
 
 <script setup>
 import TabMenu from "primevue/tabmenu";
 import { ref, onMounted } from "vue";
+import router from "../router";
 
 const items = ref([
   { label: "Home" },
@@ -24,6 +21,10 @@ const activeItem = ref("Home");
 
 const setActiveItem = (label) => {
   activeItem.value = label;
+  const route = label.toLowerCase();
+  if(route) {
+    router.push(route)
+  }
 };
 
 onMounted(() => {
@@ -36,7 +37,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Custom Styles for TabMenu */
 .p-tabmenu {
   background-color: #f5f5f5;
   padding: 1rem;
