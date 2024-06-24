@@ -13,5 +13,4 @@ export default {
 </script>
 
 <style scoped>
-/* Your component styles go here */
 </style>
